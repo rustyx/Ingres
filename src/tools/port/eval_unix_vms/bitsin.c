@@ -5,6 +5,7 @@ static char rcsid[]="$Header: /cmlib1/ingres63p.lib/unix/tools/port/eval/bitsin.
 # include 	<stdlib.h>
 # include	<stdio.h>
 # include	<signal.h>
+# include   <string.h>
 
 /* if SIGUSR1 exists, we're on a System V, otherwise assume BSD */
 
@@ -51,7 +52,7 @@ static char	* indent = "";
 static char	* myname;
 static int	vflag;
 
-main(argc, argv)
+int main(argc, argv)
 	int	argc;
 	char	**argv;
 {

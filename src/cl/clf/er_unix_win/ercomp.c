@@ -603,7 +603,7 @@ NO_OPTIM =      rs4_us5 dg8_us5 i64_aix
 */
 
 int
-main(i4 argc, char **argv)
+int main(i4 argc, char **argv)
 {
     static char	fast[MAX_LOC + 1];
     static char	slow[MAX_LOC + 1];

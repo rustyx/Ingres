@@ -143,7 +143,7 @@ struct {
 	{ "UNKNOWN", "Unknown box - fix machine.c" }
 } ;
 
-main(argc, argv)
+int main(argc, argv)
 	int	argc;
 	char	**argv;
 {

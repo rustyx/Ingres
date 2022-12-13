@@ -119,6 +119,7 @@
 # include <errno.h>
 #else
 # include <math.h>
+# include <float.h>
 #endif
 # include <signal.h>
 # include <generic.h>
@@ -135,6 +136,9 @@ int sgi_enable_fpe(void);
 **	Linux uses the POSIX signal model & so must we to avoid core dumps.
 */
 #if defined(a64_lnx) || defined(int_lnx) || defined(int_rpl) || defined(i64_lnx) || defined(i64_lnx)
+#ifndef HUGE
+# define HUGE DBL_MAX
+#endif
 sigjmp_buf  jb = {0};
 int         sm = 1;			/* Non-zero to save current signal mask. */
 # undef     longjmp
@@ -190,7 +194,13 @@ int sig;
 	longjmp( jb, sig );
 }
 
-main(argc, argv)
+void idiv_test();
+void fdiv_test();
+void iovf_test();
+void fovf_test();
+void funf_test();
+
+int main(argc, argv)
 int argc;
 char *argv[];
 {
@@ -257,7 +267,7 @@ char *argv[];
  * integer divide by zero
  */
 
-idiv_test()
+void idiv_test()
 {
 	int i, j, l;
 
@@ -299,7 +309,7 @@ idiv_test()
  * floating point divide by zero
  */
 
-fdiv_test()
+void fdiv_test()
 {
         int l;
         double d;
@@ -344,7 +354,7 @@ fdiv_test()
  * integer overflow
  */
 
-iovf_test()
+void iovf_test()
 {
         int i, l;
 
@@ -390,7 +400,7 @@ iovf_test()
  * floating point overflow
  */
 
-fovf_test()
+void fovf_test()
 {
         double d, x;
         float f;
@@ -459,7 +469,7 @@ fovf_test()
  * floating point underflow
  */
 
-funf_test()
+void funf_test()
 {
         float f;
 	double d, x;

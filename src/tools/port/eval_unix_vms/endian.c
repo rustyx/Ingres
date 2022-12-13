@@ -4,6 +4,7 @@ static char rcsid[]="$Header: /cmlib1/ingres63p.lib/unix/tools/port/eval/endian.
 
 # include 	<stdlib.h>
 # include	<stdio.h>
+# include   <string.h>
 
 /*
 **	endian.c - Copyright 2004, Ingres Corporation
@@ -14,7 +15,7 @@ static int		hexval = (int)0x01020304;
 static unsigned char	lit_end[] = { 0x04, 0x03, 0x02, 0x01 };
 static unsigned char	big_end[] = { 0x01, 0x02, 0x03, 0x04 };
 
-main(argc, argv)
+int main(argc, argv)
     int	argc;
     char	**argv;
 {

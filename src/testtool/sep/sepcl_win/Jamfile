@@ -4,6 +4,7 @@
 
 SubDir ING_SRC testtool sep sepcl_win ;
 
+include /home/me/lvnl/Ingres/src/testtool/sep/sepcl_win/MANIFEST ;
 IISUBSYS testtool sep sepcl_win ;
 
 

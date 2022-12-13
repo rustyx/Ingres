@@ -8,3 +8,9 @@
 Jamdbg
 Jamfile
 VERS
+src/bin
+src/tst
+*.log
+build
+bin
+Jamfile

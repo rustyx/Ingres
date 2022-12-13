@@ -1,0 +1,57 @@
+/*
+** Ingres clsecret.h created on Tue Dec 13 18:19:13 CET 2022
+** by the /home/me/lvnl/Ingres/src/bin/mksecret shell script
+*/
+# define xCL_065_SHADOW_PASSWD
+# define xCL_SYS_PAGE_MAP
+# define xCL_005_GETTIMEOFDAY_EXISTS
+# define xCL_GETTIMEOFDAY_TIME_AND_VOIDPTR
+# define xCL_005_GETTIMEOFDAY_EXISTS
+# define xCL_GETTIMEOFDAY_TIME_AND_TZ
+# define xCL_SHMDT_ONE_ARG
+# define xCL_003_GETRUSAGE_EXISTS
+# define xCL_004_GETDTABLESIZE_EXISTS
+# define xCL_WAITPID_EXISTS
+# define xCL_008_MKDIR_EXISTS
+# define xCL_009_RMDIR_EXISTS
+# define xCL_010_FSYNC_EXISTS
+# define xCL_012_DUP2_EXISTS
+# define xCL_016_VALLOC_EXISTS
+# define xCL_024_DIRFUNC_EXISTS
+# define xCL_030_SETITIMER_EXISTS
+# define xCL_039_FTOK_EXISTS
+# define xCL_034_GETRLIMIT_EXISTS
+# define xCL_035_RENAME_EXISTS
+# define xCL_074_WRITEV_READV_EXISTS
+# define xCL_044_SETREUID_EXISTS
+# define xCL_023_VFORK_EXISTS
+# define xCL_033_SETPRIORITY_EXISTS
+# define xCL_068_USE_SIGACTION
+# define xCL_077_BSD_MMAP
+# define xCL_079_SYSCONF_EXISTS
+# define xCL_080_GETPAGESIZE_EXISTS
+# define xCL_MLOCK_EXISTS
+# define xCL_SETEUID_EXISTS
+# define xCL_006_FCNTL_H_EXISTS
+# define xCL_018_TERMIO_EXISTS
+# define xCL_019_TCPSOCKETS_EXIST
+# define xCL_TCPSOCKETS_IPV6_EXIST
+# define xCL_025_DIRENT_EXISTS
+# define xCL_043_SYSV_POLL_EXISTS
+# define xCL_069_UNISTD_H_EXISTS
+# define xCL_070_LIMITS_H_EXISTS
+# define xCL_071_UCONTEXT_H_EXISTS
+/* Floating point exception */
+# define xCL_046_IDIV_HARD
+# define xCL_051_FDIV_UNDETECTED
+# define xCL_054_IOVF_UNDETECTED
+# define xCL_057_FOVF_UNDETECTED
+# define xCL_060_FUNF_UNDETECTED
+# define TYPESIG void
+# define xCL_086_SETPGRP_0_ARGS
+# define PRINTER_CMD "/usr/bin/lpr"
+# define xCL_093_MALLOC_OK
+# define xCL_094_TLS_EXISTS
+# define xCL_NEED_RPCSVC_REX_HDR
+
+/* End of clsecret.h */

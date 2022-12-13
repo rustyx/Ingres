@@ -61,7 +61,7 @@ static int	vflag;
 
 static jmp_buf	env;
 
-main(argc, argv)
+int main(argc, argv)
 	int	argc;
 	char	**argv;
 {

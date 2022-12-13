@@ -4,6 +4,7 @@ static char rcsid[]="$Header: /cmlib1/ingres63p.lib/unix/tools/port/eval/unschar
 
 # include	<stdlib.h>
 # include	<stdio.h>
+# include   <string.h>
 
 /*
 **	unschar.c - Copyright (c) 2004 Ingres Corporation
@@ -19,7 +20,7 @@ static	int	vflag;
 static	char	* myname;
 static	char	* indent = "";
 
-main(argc, argv)
+int main(argc, argv)
 	int	argc;
 	char	**argv;
 {

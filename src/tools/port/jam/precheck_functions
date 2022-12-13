@@ -342,7 +342,7 @@ check_for_pam()
       # look for shared library, since the library extension 
       # and version may be different, just look for libpam.*
       libpamfound=1
-      for searchdir in /lib /usr/lib /usr/local/lib /usr/lib64
+      for searchdir in /lib /usr/lib /usr/local/lib /usr/lib64 /lib/x86_64-linux-gnu
       do
         ls ${searchdir}/libpam.* 1> /dev/null 2> /dev/null
 	[ $? = 0 ] && libpamfound=0 && break
@@ -533,9 +533,10 @@ check_for_proj ()
     if [ ! -z "$PROJ_LOC" ] ; then
         #Figure out Proj.4 version 
         #unfortunately the lib version is different from the Proj.4 version
-        PROJ_VERS=`ls $PROJ_LOC/libproj.so.[0-9]`
+        PROJ_VERS=`ls $PROJ_LOC/libproj.so.[0-9]*`
         PROJ_VERS=${PROJ_VERS##*.so.}
         export PROJ_VERS
+        echo "PROJ_VERS=$PROJ_VERS"
     fi
     
     [ $rhybrid = "true" ] &&

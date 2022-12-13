@@ -263,7 +263,7 @@ export plusone
 for d in ${dirs-.}
 {
  (
-  [ -d "$d" ] || continue                   # Not a valid source directory
+  [ -d "$d" ] || exit                   # Not a valid source directory
   case "$d" in
 	*_unix_win*)           #need this case for directories common to unix 
 			       #and windows (i.e. unix_win) b/c otherwise on 
@@ -279,7 +279,7 @@ for d in ${dirs-.}
 	*_win*) ext=win ;;
   esac
   if [ "$ext" ] && [ "$ext" != "$platform" ] ; then
-	continue
+	exit
   fi
   [ "$d" = "." ] && d=`$PWDIR`
   cd $d
@@ -324,7 +324,7 @@ else
                else
                   dir=`echo $dir | sed "s:^$ING_SRC[/]*::"` # No Jamfile file for 
                fi
-		[ "$dir" ] || continue                 # top-level src dir
+		[ "$dir" ] || exit                 # top-level src dir
                 ;;                    
 	$ING_TST/*)
 		if [ "$WINDOWS" = "TRUE" ] ; then
@@ -332,7 +332,7 @@ else
                else
                   dir=`echo $dir | sed "s:^$ING_TST[/]*:tst/:"` # No Jamfile file for 
                fi
-		[ "$dir" ] || continue                 # top-level src dir
+		[ "$dir" ] || exit                 # top-level src dir
                 ;;                    
              *) while expr $dir : ".*/.*" > $DEVNULL     # $ING_VERS path
                 do
@@ -729,7 +729,7 @@ export GROUP FACILITY SUBSYS COMPONENT
 # Preserve MANIFEST files. If one exists, include it and move on
   [ -f MANIFEST ] && {
   echo "include `$PWDIR`/MANIFEST ;"
-  continue
+  exit
 
   }
 
@@ -762,7 +762,7 @@ export GROUP FACILITY SUBSYS COMPONENT
 		case "$loc" in
 		    *gpl_pixmap*)
 			[ -f ./enterprise_pixmap_unix_win/$JAMFILE ] &&
-			    continue
+			    exit
 			    ;;
 		esac
 		  #this case sorts location directories to make sure 
@@ -1110,7 +1110,7 @@ export GROUP FACILITY SUBSYS COMPONENT
             {
               read char junk < $file
               [ "$char" = ":" ] &&
-              { SHELLS="$SHELLS $file" ; continue ; }
+              { SHELLS="$SHELLS $file" ; exit ; }
               [ -f `basename $file .sh`.qsh ] ||
               SHS="$SHS $file"
             }

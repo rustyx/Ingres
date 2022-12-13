@@ -5,6 +5,7 @@
 #include    <stdio.h>
 #include    <fcntl.h>
 #include    <errno.h> 
+#include    <string.h>
 extern	int	errno;
 
 /*
@@ -13,7 +14,7 @@ extern	int	errno;
 */
 
 
-main( argc, argv)
+int main( argc, argv)
 int argc;
 char *argv[];
 {

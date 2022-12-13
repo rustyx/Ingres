@@ -4,6 +4,7 @@ static char rcsid[]="$Header: /cmlib1/ingres63p.lib/unix/tools/port/eval/tidswap
 
 # include	<stdlib.h>
 # include	<stdio.h>
+# include   <string.h>
 
 /*
 **	tidswap.c - Copyright (c) 2004 Ingres Corporation 
@@ -33,7 +34,7 @@ BITFLD line:9;
 BITFLD page:23;
 } TID;
 
-main(argc, argv)
+int main(argc, argv)
 	int	argc;
 	char	**argv;
 {

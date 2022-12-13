@@ -87,7 +87,7 @@ static	int	vflag;
 static	char	* myname;
 static	char	* indent = "";
 
-main(argc, argv)
+int main(argc, argv)
 	int	argc;
 	char	**argv;
 {
@@ -139,38 +139,38 @@ main(argc, argv)
 
 	if(cflag)
 		printf("%schar: sizeof_struct %d, pad %d\n", indent,
-			sizeof(ii_s_char),
-			sizeof(ii_s_char) - sizeof(char) - sizeof(char));
+			(int)(sizeof(ii_s_char)),
+			(int)(sizeof(ii_s_char) - sizeof(char) - sizeof(char)));
 
 	if(sflag)
 		printf("%sshort: sizeof_struct %d, pad %d\n", indent,
-			sizeof(s_short),
-			sizeof(s_short) - sizeof(char) - sizeof(short));
+			(int)(sizeof(s_short)),
+			(int)(sizeof(s_short) - sizeof(char) - sizeof(short)));
 
 	if(iflag)
 		printf("%sint: sizeof_struct %d, pad %d\n", indent,
-			sizeof(s_int),
-			sizeof(s_int) - sizeof(char) - sizeof(int));
+			(int)(sizeof(s_int)),
+			(int)(sizeof(s_int) - sizeof(char) - sizeof(int)));
 
 	if(lflag)
 		printf("%slong: sizeof_struct %d, pad %d\n", indent,
-			sizeof(s_long),
-			sizeof(s_long) - sizeof(char) - sizeof(long));
+			(int)(sizeof(s_long)),
+			(int)(sizeof(s_long) - sizeof(char) - sizeof(long)));
 
 	if(fflag)
 		printf("%sfloat: sizeof_struct %d, pad %d\n", indent,
-			sizeof(s_float),
-			sizeof(s_float) - sizeof(char) - sizeof(float));
+			(int)(sizeof(s_float)),
+			(int)(sizeof(s_float) - sizeof(char) - sizeof(float)));
 
 	if(dflag)
 		printf("%sdouble: sizeof_struct %d, pad %d\n", indent,
-			sizeof(s_double),
-			sizeof(s_double) - sizeof(char) - sizeof(double));
+			(int)(sizeof(s_double)),
+			(int)(sizeof(s_double) - sizeof(char) - sizeof(double)));
 
 	if(pflag)
 		printf("%sptr: sizeof_struct %d, pad %d\n", indent,
-			sizeof(s_ptr),
-			sizeof(s_ptr) - sizeof(char) - sizeof(char *));
+			(int)(sizeof(s_ptr)),
+			(int)(sizeof(s_ptr) - sizeof(char) - sizeof(char *)));
 
 	exit(0);
 }
